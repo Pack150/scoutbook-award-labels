@@ -3,14 +3,22 @@
 
 form {
   margin: 1em auto;
-  width: 50%;
+  width: 75%;
   text-align: center;
   padding: 1.5em 0;
   background-color: #FDFEA7;
   color: blue;
+  border-radius: 2em;
+  border: 1px solid blue;
+  font-family: "Calisto MT", "Bookman Old Style", Bookman, "Goudy Old Style", Garamond, "Hoefler Text", "Bitstream Charter", Georgia, serif;
+}
+form input {
+  display: block;
+  width: 50%;
+  margin: 0 auto;
 }
 form p {
-  width: 75%;
+  width: 60%;
   margin-left: auto;
   margin-right: auto;
 }
