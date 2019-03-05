@@ -1,7 +1,9 @@
 # scoutbook-award-labels
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+This is standalone ember app. We use it to generate award labels for our monthly
+Pack meetings. You can use the hosted version running on github pages that will 
+be linked here once it is set up. If you would like to run it on your computer,
+you can follow the directions below.
 
 ## Prerequisites
 

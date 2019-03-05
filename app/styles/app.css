@@ -1,0 +1,77 @@
+/* @imports must appear at top of stylesheet to be valid CSS */
+@import "normalize.css";
+
+form {
+  margin: 1em auto;
+  width: 50%;
+  text-align: center;
+  padding: 1.5em 0;
+  background-color: #FDFEA7;
+  color: blue;
+}
+form p {
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+}
+section {
+  border: 1px solid black;
+  width: 1.75in;
+  height: 3.0in;
+  float: left;
+  margin: 0 0.1in 0.1in 0;
+  break-inside: avoid;
+}
+
+section header {
+  border-bottom: 1px solid black;
+  padding: 0.25em .5em;
+}
+section header aside {
+  font-size: 80%;
+  text-align: right;
+  font-style: italic;
+}
+
+section header aside.lion::after {
+  content: " 🦁";
+  font-size: 100%;
+  font-style: normal;
+}
+section header aside.tiger::after {
+  content: " 🐯";
+  font-size: 100%;
+  font-style: normal;
+}
+section header aside.wolf::after {
+  content: " 🐺";
+  font-size: 100%;
+  font-style: normal;
+}
+section header aside.bear::after {
+  content: " 🐻";
+  font-size: 100%;
+  font-style: normal;
+}section header aside.webelos::after {
+  content: " ⚜";
+  font-size: 100%;
+  font-style: normal;
+}
+
+section header h1 {
+  font-size: 110%;
+  margin: 0.25em 0 0;
+}
+section main {
+  padding: 0.5em;
+}
+section main h2 {
+  font-weight: normal;
+  font-size: 100%;
+  margin: 0;
+}
+section main ul {
+  margin: .5em 0 1em;
+  padding-left: 2em;
+  font-size: 85%;
+}

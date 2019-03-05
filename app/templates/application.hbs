@@ -1,5 +1,60 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
-
-{{outlet}}
+{{#if haveData}}
+  {{#if awardData}}
+    {{#each-in awardData as |denName den|}}
+      {{#each-in den as |scoutName scout|}}
+        <section>
+          <header>
+            <aside class={{scout.denClass}}>{{denName}}</aside>
+            <h1>{{scoutName}}</h1>
+          </header>
+          <main>
+            {{#if scout.adventures}}
+              <h2>Adventures:</h2>
+              <ul>
+                {{#each scout.adventures as |award|}}
+                  <li>{{award}}</li>
+                {{/each}}
+              </ul>
+            {{/if}}
+            {{#if scout.awards}}
+              <h2>Awards:</h2>
+              <ul>
+                {{#each scout.awards as |award|}}
+                  <li>{{award}}</li>
+                {{/each}}
+              </ul>
+            {{/if}}
+            {{#if scout.ranks}}
+              <h2>Rank:</h2>
+              <ul>
+                {{#each scout.ranks as |award|}}
+                  <li>{{award}}</li>
+                {{/each}}
+              </ul>
+            {{/if}}
+          </main>
+        </section>
+      {{/each-in}}
+    {{/each-in}}
+  {{else}}
+    <p>processing...</p>
+  {{/if}}
+{{else}}
+  <form>
+    <h1>Scoutbook Award Labels</h1>
+    {{#if error}}
+      <p>Selected file was invalid: {{error}}</p>
+    {{/if}}
+    <input type="file" accept=".csv" onchange={{action "parseFile"}}>
+    <p>
+      Choose the CSV file for your Scoutbook Awards PO and print the result. Cut
+      out the labels and stick them on a No. 3 Coin Envelope. A
+      <a href="https://smile.amazon.com/Scotch-Applicator-Double-Sided-160/dp/B00P12N4Z0">double-sided tape applicator</a>
+      really helps!
+    </p>
+    <p>
+      This tool is designed fo Cub Scout Packs that have lots of monthly awards to
+      hand out.
+    </p>
+  </form>
+{{/if}}
