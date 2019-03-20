@@ -1,6 +1,11 @@
 /* @imports must appear at top of stylesheet to be valid CSS */
 @import "normalize.css";
 
+@media print {
+  #control-panel {
+    display: none !important;
+  }
+}
 form {
   margin: 1em auto;
   width: 75%;

@@ -1,5 +1,32 @@
-{{#if haveData}}
+<form>
+  <h1>Scoutbook Award Labels</h1>
+  {{#if error}}
+    <p>Selected file was invalid: {{error}}</p>
+  {{/if}}
   {{#if awardData}}
+    <p>Your file has been downloaded!</p>
+  {{else}}
+    <input type="file" accept=".csv" onchange={{action "parseFile"}}>
+  {{/if}}
+  <p>
+    Choose the CSV file for your Scoutbook Awards PO and print the result. Cut
+    out the labels and stick them on a No. 3 Coin Envelope. A
+    <a href="https://smile.amazon.com/Scotch-Applicator-Double-Sided-160/dp/B00P12N4Z0">double-sided tape applicator</a>
+    really helps!
+  </p>
+  <p>
+    This tool is designed for Cub Scout Packs that have lots of monthly awards to
+    hand out.
+  </p>
+  <p>
+    All data remains local; nothing is uploaded to a remote server. Source code
+    for this site is
+    <a href="https://github.com/Pack150/scoutbook-award-labels">hosted on GitHub</a>.
+    Please feel free to reach out there with any questions!
+  </p>
+</form>
+{{#if printPreview}}
+  <div id="award-list">
     {{#each-in awardData as |denName den|}}
       {{#each-in den as |scoutName scout|}}
         <section>
@@ -36,31 +63,5 @@
         </section>
       {{/each-in}}
     {{/each-in}}
-  {{else}}
-    <p>processing...</p>
-  {{/if}}
-{{else}}
-  <form>
-    <h1>Scoutbook Award Labels</h1>
-    {{#if error}}
-      <p>Selected file was invalid: {{error}}</p>
-    {{/if}}
-    <input type="file" accept=".csv" onchange={{action "parseFile"}}>
-    <p>
-      Choose the CSV file for your Scoutbook Awards PO and print the result. Cut
-      out the labels and stick them on a No. 3 Coin Envelope. A
-      <a href="https://smile.amazon.com/Scotch-Applicator-Double-Sided-160/dp/B00P12N4Z0">double-sided tape applicator</a>
-      really helps!
-    </p>
-    <p>
-      This tool is designed for Cub Scout Packs that have lots of monthly awards to
-      hand out.
-    </p>
-    <p>
-      All data remains local; nothing is uploaded to a remote server. Source code
-      for this site is
-      <a href="https://github.com/Pack150/scoutbook-award-labels">hosted on GitHub</a>.
-      Please feel free to reach out there with any questions!
-    </p>
-  </form>
+  </div>
 {{/if}}
