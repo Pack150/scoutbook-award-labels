@@ -1,7 +1,7 @@
 # scoutbook-award-labels
 
 This is standalone ember app. We use it to generate award labels for our monthly
-Pack meetings. You can use the [http://www.pack150.org/scoutbook-award-labels/](hosted version running on github pages).
+Pack meetings. You can use the [hosted version running on github pages](http://www.pack150.org/scoutbook-award-labels/).
 If you would like to run it on your computer, you can follow the directions below.
 
 ## Prerequisites
