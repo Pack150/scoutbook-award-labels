@@ -193,7 +193,7 @@ export default Controller.extend({
             }
             let subUnit = `${row['Den Type']} Den ${row['Den Number']}`;
             let scoutName = `${row['First Name']} ${row['Last Name']}`;
-            let itemName = row['Item Name'].replace(/ adventure|emblem|award patch/i,'');
+            let itemName = row['Item Name'].replace(/cub scouts | adventure| emblem|award patch/ig,'');
             if (!awardData[subUnit]) {
               awardData[subUnit]={};
             }
