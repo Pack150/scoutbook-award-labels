@@ -48,7 +48,7 @@ export default Controller.extend({
 
     const labelTextWidth = labelWidth - (labelXPadding * 2);
 
-    const lineHeight = 1.4;
+    const lineHeight = 1.25;
     const denFontSize = 9;
     const scoutNameFontSize = 14;
     const awardFontSize = 12;
@@ -57,8 +57,10 @@ export default Controller.extend({
     const scoutNameUnderlineOffset = 2;
     const underlineBottomPadding = 5;
 
-    const awardNameBullet = '    - ';
-    const awardNameIndent = '       ';
+    const awardListBottomPadding = 7;
+
+    const awardNameBullet = ' - ';
+    const awardNameIndent = '    ';
 
     let counter = 0;
 
@@ -124,12 +126,13 @@ export default Controller.extend({
         // Insert the Awards
         doc.setFontSize(awardFontSize);
         yOffset=yOffset + (awardFontSize * lineHeight);
-        let awardsList = [];
 
         ['adventures','awards','ranks'].forEach((awardType)=>{
           if (this.awardData[denName][scoutName][awardType].length === 0) {
             return;
           }
+          let awardsList = [];
+
           switch (awardType) {
             case 'adventures':
               awardsList.push('Adventures:');
@@ -153,15 +156,15 @@ export default Controller.extend({
             }
           });
           // insert an empty line
-          awardsList.push(' ');
+          //          awardsList.push(' ');
+          doc.text(
+            awardsList,
+            xOffset+labelXPadding,
+            yOffset
+          );
+          // move yOffset down by the number of lines, plus a small padding
+          yOffset = yOffset + (awardFontSize * lineHeight * awardsList.length) + awardListBottomPadding;
         })
-
-        doc.text(
-          awardsList,
-          xOffset+labelXPadding,
-          yOffset
-        );
-
 
         // advance counter and then decide if we need to add a new page
         counter++;
