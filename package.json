@@ -47,7 +47,7 @@
     "ember-source": "~3.8.0",
     "ember-welcome-page": "^3.2.0",
     "eslint-plugin-ember": "^5.2.0",
-    "jspdf": "^1.5.3",
+    "jspdf": "^2.3.1",
     "loader.js": "^4.7.0",
     "qunit-dom": "^0.8.0"
   },
